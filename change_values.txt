@@ -1,0 +1,18 @@
+# classes to watch
+# noinspection RubyStringKeysInHashInspection
+$classes = { 'ENG 101-009' => '1234567890',
+             'BUS 350-002' => '##########' }
+# must have your classes inputed above in this format
+
+# don't touch this
+$sent_text = {}
+
+# CHANGE THESE VALUES
+$opus_username = '<YOUR USERNAME>'
+$opus_password = '<YOU PASSWORD>'
+
+$textnow_username = '<YOUR USERNAME>'
+$textnow_password = '<YOUR PASSWORD>'
+
+# get texts to this number whenever other peoples' classes open
+$my_number = '<YOUR NUMBER>'
