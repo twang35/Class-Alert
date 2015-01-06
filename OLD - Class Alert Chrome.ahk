@@ -21,29 +21,14 @@ clipboard = ;empty
 global waitColor := "0xFCFCFC"
 
 num_class := "0" ;always 0
-max_classes := "9" ;same as number of last class
+max_classes := "1" ;same as number of last class
 	
-class_name_0 := "BUS 350-002"	; Courtney Clark
-class_name_1 := "CS 170-004"	;Alyssa
-class_name_2 := "CS 599"		;Tony Testing
-class_name_3 := "EDS 306W-00P"	;Tony
-class_name_4 := "PE 135-000"	;Amanda
-class_name_5 := "PE 135-001"	;Amanda
-class_name_6 := "PSYC 385-001"	;Amanda
-class_name_7 := "QTM 100-000"	;Alyssa
-class_name_8 := "QTM 100-LD2 (lab)"	;Alyssa
-class_name_9 := "REL 354RW-000"	;Tony
+class_name_0 := "BUS 350-002"	; Courtney
+class_name_1 := "CS 170-004"	; Alyssa
 
-cell_0 := "2398771298"	; Courtney Clark
-cell_1 := "2295916305"	;Alyssa
-cell_2 := "7709136302"	;Tony Testing
-cell_3 := "7709136302"	;Tony
-cell_4 := "9715336853"	;Amanda
-cell_5 := "9715336853"	;Amanda
-cell_6 := "9715336853"	;Amanda
-cell_7 := "2295916305"	;Alyssa
-cell_8 := "2295916305"	;Alyssa
-cell_9 := "7709136302"	;Tony
+
+cell_0 := "0123456789"	; Courtney
+cell_1 := "1234567890"	; Alyssa
 
 sent_0 := "0"
 sent_1 := "0"
@@ -751,13 +736,7 @@ return
 
 #z::	;testing
 
-chromePageWait() 
-;~ PixelGetColor, dropper, 79, 22
-;~ while (dropper = waitColor)
-;~ {
-	;~ PixelGetColor, dropper, 79, 22
-;~ }
-;~ MsgBox, %dropper%
+chromePageWait()
 MsgBox, end
 
 return
