@@ -55,7 +55,7 @@ def opus_script
 
       # does not have code to choose between multiple semesters
 
-      sleep 30
+      sleep 3
 
       num_class = 0
       search = "win0divP_CLASS_NAME$#{num_class}"
@@ -66,7 +66,6 @@ def opus_script
         if iframe.div(:id => "win0divDERIVED_REGFRM1_SSR_STATUS_LONG$#{num_class}").img.alt == 'Open'
           class_name = iframe.div(:id => search).text.split("\n").first
           if $classes[class_name] &&  !$sent_text[class_name]
-            puts class_name + ': ' + $classes[class_name]
             sendText($classes[class_name], class_name)
             $sent_text[class_name] = true
           end
@@ -74,13 +73,16 @@ def opus_script
         num_class += 1
         search = "win0divP_CLASS_NAME$#{num_class}"
       end
+
+      sleep 30
     end
 
     $sent_text.clear
     b.close
-  rescue Watir::Exception::UnknownObjectException, Watir::Wait::TimeoutError
+  rescue Watir::Exception::UnknownObjectException, Watir::Wait::TimeoutError, Timeout::Error
     sleep 5
     rescues += 1
+    puts rescues
     b.close
     $sent_text.clear
     if rescues > 5
@@ -118,7 +120,7 @@ def sendText(number, class_name)
   bText.text_field(:id => 'contact').wait_until_present
   bText.text_field(:id => 'contact').set number
   if class_name == 'CS 599R-VIGF'
-    bText.text_field(:id => 'message').set 'STILL WORKING2'
+    bText.text_field(:id => 'message').set 'STILL WORKING'
   elsif class_name == 'Broken'
     bText.text_field(:id => 'message').set 'Is broked. Somebody come fix me...'
   else
